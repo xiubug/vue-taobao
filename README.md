@@ -8,21 +8,21 @@
 # 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 使用热加载模式访问 localhost:8888 
 npm run dev
 
-# build for production with minification
+# 生产环境打包压缩
 npm run build
 
-# build for production and view the bundle analyzer report
+# 生成并查看性能分析报告
 npm run build --report
 
-# run unit tests
+# 进行单元测试
 npm run unit
 
-# run e2e tests
+# 运行 e2e 测试
 npm run e2e
 
-# run all tests
+# 运行所有测试
 npm test
 ```
