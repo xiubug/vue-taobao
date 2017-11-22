@@ -17,7 +17,7 @@
             我的淘宝
         </mt-tab-item>
         <mt-tab-item id="more">
-            <i slot="icon" class="iconfont">&#xe601;</i>
+            <i slot="icon" class="iconfont">&#xe680;</i>
             更多
         </mt-tab-item>
     </mt-tabbar>
@@ -43,6 +43,18 @@ export default {
         border-top: 1px solid #E7E7E7;
         background-color: #FFF;
         background-size: 100% 0;
+        height: 2.5rem;
+        & > .mint-tab-item {
+            padding: .2rem 0 0 0;
+            &.is-selected {
+                color: #FE5400;
+                background-color: transparent;
+            }
+            .mint-tab-item-icon {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
     }
 </style>
 
