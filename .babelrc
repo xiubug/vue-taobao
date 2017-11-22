@@ -5,7 +5,10 @@
     }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [["component", {
+    "libraryName": "mint-ui",
+    "style": true
+  }], "transform-runtime"],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
