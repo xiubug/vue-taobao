@@ -43,16 +43,21 @@ export default {
         border-top: 1px solid #E7E7E7;
         background-color: #FFF;
         background-size: 100% 0;
-        height: 2.5rem;
+        left: 50% !important;
+        margin-left: -3.75rem;
+        width: 100%;
+        max-width: 7.5rem;
+        height: .95rem;
         & > .mint-tab-item {
-            padding: .2rem 0 0 0;
+            padding: .05rem 0 0 0;
             &.is-selected {
                 color: #FE5400;
                 background-color: transparent;
             }
             .mint-tab-item-icon {
-                width: 1rem;
-                height: 1rem;
+                width: .5rem;
+                height: .5rem;
+                margin: 0 auto;
             }
         }
     }

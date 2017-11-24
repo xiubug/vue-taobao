@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router/router'
 import { routerMode } from './config/env'
+import './config/rem'
 import FastClick from 'fastclick'
 
 if ('addEventListener' in document) {

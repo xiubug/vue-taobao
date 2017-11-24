@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-width">
     <router-view></router-view>
   </div>
 </template>
