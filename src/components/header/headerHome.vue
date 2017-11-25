@@ -24,6 +24,7 @@ export default {
         height: .95rem;
         background-color: #FE5400;
         padding: .12rem .12rem .12rem 0;
+        z-index: 1;
         .header-logo {
           font-size: .7rem;
           color: #fff;

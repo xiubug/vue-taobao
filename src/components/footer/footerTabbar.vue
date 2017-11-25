@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     .footer-tabbar {
         border-top: 1px solid #E7E7E7;
         background-color: #FFF;

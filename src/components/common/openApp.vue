@@ -1,7 +1,7 @@
 <template>
   <div class="open-app-container" flex="cross:center dir:right box:first">
     <div class="open-app-btn">立即打开</div>
-    <div flex="main:left cross:center">
+    <div class="open-app" flex="main:left cross:center">
       <span class="iconfont close-open-btn">&#xe608;</span>
       <span class="iconfont open-logo">&#xe6e4;</span>
       <div class="open-text">
@@ -20,7 +20,11 @@ export default {}
   .open-app-container {
     height: 1.4rem;
     background-color: #fff;
-    border-bottom: 1px solid #bababa;
+    .open-app {
+      border-bottom: 1px solid #bababa;
+      box-sizing: border-box;
+      height: 100%;
+    }
     .open-app-btn {
       font-size: .3rem;
       text-align: center;
