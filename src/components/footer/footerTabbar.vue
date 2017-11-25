@@ -1,7 +1,7 @@
 <template>
     <mt-tabbar v-model="selected" class="footer-tabbar" fixed>
         <mt-tab-item id="home">
-            <i slot="icon" class="iconfont">&#xe601;</i>
+            <i slot="icon" class="iconfont">&#xe7d4;</i>
             首页
         </mt-tab-item>
         <mt-tab-item id="logistics">
@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .footer-tabbar {
         border-top: 1px solid #E7E7E7;
         background-color: #FFF;
@@ -49,15 +49,19 @@ export default {
         max-width: 7.5rem;
         height: .95rem;
         & > .mint-tab-item {
-            padding: .05rem 0 0 0;
+            padding: .1rem 0;
             &.is-selected {
                 color: #FE5400;
                 background-color: transparent;
             }
             .mint-tab-item-icon {
-                width: .5rem;
-                height: .5rem;
+                font-size: .3rem;
+                width: .3rem;
+                height: .3rem;
                 margin: 0 auto;
+            }
+            .mint-tab-item-label {
+                margin-top: .15rem;
             }
         }
     }
