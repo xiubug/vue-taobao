@@ -4,6 +4,17 @@
     <div id="scroll_wrapper" class="scroll-wrapper">
       <div class="content">
         <open-app></open-app>
+        <mt-swipe :auto="4000" class="home-swipe">
+          <mt-swipe-item>
+            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
+          </mt-swipe-item>
+          <mt-swipe-item>
+            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
+          </mt-swipe-item>
+          <mt-swipe-item>
+            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
+          </mt-swipe-item>
+        </mt-swipe>
       </div>
     </div>
     <footer-tabbar></footer-tabbar>
@@ -11,12 +22,15 @@
 </template>
 
 <script>
+import { Swipe, SwipeItem } from 'mint-ui'
 import headerHome from '../../components/header/headerHome'
 import openApp from '../../components/common/openApp'
 import footerTabbar from '../../components/footer/footerTabbar'
 import BScroll from 'better-scroll'
 export default {
   components: {
+    mtSwipe: Swipe,
+    mtSwipeItem: SwipeItem,
     headerHome,
     openApp,
     footerTabbar
@@ -37,6 +51,14 @@ export default {
   .scroll-wrapper {
     position: relative;
     margin-top: .95rem;
+    .home-swipe {
+      height: 100px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
   }
 </style>
 
