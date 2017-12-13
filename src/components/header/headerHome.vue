@@ -2,7 +2,7 @@
   <div class="header-home-container" flex="">
     <div class="header-logo iconfont" flex-box="0">&#xe614;</div>
     <div class="header-search" flex-box="1">
-      <span class="header-search-placeholder"><i class="iconfont iconfont-search">&#xe60d;</i>寻找宝贝店铺</span>
+      <span class="header-search-placeholder"><i class="iconfont iconfont-search">&#xe60d;</i>寻找宝贝店铺</span>
     </div>
   </div>
 </template>
