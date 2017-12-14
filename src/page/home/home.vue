@@ -22,12 +22,13 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
 import { Swipe, SwipeItem } from 'mint-ui'
 import BScroll from 'better-scroll'
 import headerHome from '../../components/header/headerHome'
 import openApp from '../../components/common/openApp'
 import footerTabbar from '../../components/footer/footerTabbar'
-import { getUserList } from '../../service/api'
+const { mapState, mapGetters, mapActions } = createNamespacedHelpers('user')
 export default {
   components: {
     mtSwipe: Swipe,
@@ -35,6 +36,14 @@ export default {
     headerHome,
     openApp,
     footerTabbar
+  },
+  computed: {
+    ...mapState([
+      'userListState'
+    ]),
+    ...mapGetters([
+      'userListGetters'
+    ])
   },
   mounted () {
     /* eslint-disable no-new */
@@ -44,7 +53,18 @@ export default {
       swipeTime: 1800,
       click: true
     })
-    getUserList()
+    this.initData()
+  },
+  methods: {
+    ...mapActions([
+      'getUserList'
+    ]),
+    // 初始化数据
+    async initData () {
+      await this.getUserList()
+      console.log(this.userListState)
+      console.log(this.userListGetters)
+    }
   }
 }
 </script>

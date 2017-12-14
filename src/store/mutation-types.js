@@ -1,0 +1,1 @@
+export const GET_USERLIST = 'GET_USERLIST'

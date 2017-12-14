@@ -7,10 +7,10 @@ export default [{
   path: '/',
   component: App, // 顶层路由，对应index.html
   children: [{
-    path: '',
-    redirect: '/home'
-  }, {
     path: '/home',
     component: home
+  }, {
+    path: '*',
+    redirect: '/home'
   }]
 }]

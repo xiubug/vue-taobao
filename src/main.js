@@ -3,9 +3,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router/router'
-import { routerMode } from './config/env'
-import './config/rem'
 import FastClick from 'fastclick'
+import { routerMode } from './config/env'
+import store from './store/'
+import './config/rem'
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function () {
@@ -36,5 +37,6 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router
+  router,
+  store
 })
