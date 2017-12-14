@@ -28,7 +28,7 @@ import BScroll from 'better-scroll'
 import headerHome from '../../components/header/headerHome'
 import openApp from '../../components/common/openApp'
 import footerTabbar from '../../components/footer/footerTabbar'
-const { mapState, mapGetters, mapActions } = createNamespacedHelpers('user')
+const userModule = createNamespacedHelpers('user')
 export default {
   components: {
     mtSwipe: Swipe,
@@ -38,10 +38,10 @@ export default {
     footerTabbar
   },
   computed: {
-    ...mapState([
+    ...userModule.mapState([
       'userListState'
     ]),
-    ...mapGetters([
+    ...userModule.mapGetters([
       'userListGetters'
     ])
   },
@@ -56,14 +56,12 @@ export default {
     this.initData()
   },
   methods: {
-    ...mapActions([
+    ...userModule.mapActions([
       'getUserList'
     ]),
     // 初始化数据
     async initData () {
       await this.getUserList()
-      console.log(this.userListState)
-      console.log(this.userListGetters)
     }
   }
 }
