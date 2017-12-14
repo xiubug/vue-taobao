@@ -23,10 +23,11 @@
 
 <script>
 import { Swipe, SwipeItem } from 'mint-ui'
+import BScroll from 'better-scroll'
 import headerHome from '../../components/header/headerHome'
 import openApp from '../../components/common/openApp'
 import footerTabbar from '../../components/footer/footerTabbar'
-import BScroll from 'better-scroll'
+import { getUserList } from '../../service/api'
 export default {
   components: {
     mtSwipe: Swipe,
@@ -43,6 +44,7 @@ export default {
       swipeTime: 1800,
       click: true
     })
+    getUserList()
   }
 }
 </script>

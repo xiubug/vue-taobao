@@ -1,6 +1,4 @@
-import Config from './index'
-
-const baseUrl = Config.api
+import { baseUrl } from './env'
 
 export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
   type = type.toUpperCase()
@@ -20,7 +18,7 @@ export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
       method: type,
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       mode: 'cors'
       // cache: 'force-cache' 表示fetch请求不顾一切的依赖缓存, 即使缓存过期了, 它依然从缓存中读取. 除非没有任何缓存, 那么它将发送一个正常的request.
@@ -44,7 +42,7 @@ export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
       if (window.XMLHttpRequest) {
         requestObj = new XMLHttpRequest()
       } else if (window.ActiveXObject) {
-        // requestObj = new ActiveXObject
+        requestObj = new window.ActiveXObject('Microsoft.XMLHTTP')
       }
       requestObj.open(type, url, true)
       requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
