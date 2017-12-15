@@ -1,18 +1,18 @@
 <template>
     <mt-tabbar v-model="selected" class="footer-tabbar" fixed>
-        <mt-tab-item id="home">
+        <mt-tab-item id="home" @click.native="jumpPage({path: '/home'})">
             <i slot="icon" class="iconfont">&#xe7d4;</i>
             首页
         </mt-tab-item>
-        <mt-tab-item id="logistics">
+        <mt-tab-item id="logistics" @click.native="jumpPage({path: '/logistics'})">
             <i slot="icon" class="iconfont">&#xe6b0;</i>
             物流
         </mt-tab-item>
-        <mt-tab-item id="shoppingCart">
+        <mt-tab-item id="cart" @click.native="jumpPage({path: '/cart'})">
             <i slot="icon" class="iconfont">&#xe670;</i>
             购物车
         </mt-tab-item>
-        <mt-tab-item id="myTb">
+        <mt-tab-item id="profile" @click.native="jumpPage({path: '/profile'})">
             <i slot="icon" class="iconfont">&#xe637;</i>
             我的淘宝
         </mt-tab-item>
@@ -26,14 +26,20 @@
 <script>
 import { Tabbar, TabItem } from 'mint-ui'
 export default {
+  props: ['current'],
   data () {
     return {
-      selected: 'home'
+      selected: this.current
     }
   },
   components: {
     mtTabbar: Tabbar,
     mtTabItem: TabItem
+  },
+  methods: {
+    jumpPage (router) { // 页面跳转
+      this.$router.push(router)
+    }
   }
 }
 </script>

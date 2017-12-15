@@ -1,8 +1,8 @@
-import { baseUrl } from './env'
+import Config from './index'
 
 export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
   type = type.toUpperCase()
-  url = baseUrl + url
+  url = Config.baseUrl + url
   let aData = [] // 存储数据
   let sData = '' // 拼接数据
   for (let attr in data) {

@@ -11,7 +11,7 @@
         </mt-swipe>
       </div>
     </div>
-    <footer-tabbar />
+    <footer-tabbar :current='"home"' />
   </div>
 </template>
 
