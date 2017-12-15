@@ -1,5 +1,7 @@
 # vue-taobao
 
+- 预览：http://tb.sosout.com/
+
 ## 注：此项目仿照淘宝网触屏版。
 
 > 基于 vue2 + vuex + webpack3 构建一个单页面应用
