@@ -1,23 +1,17 @@
 <template>
   <div class="home-container">
-    <header-home></header-home>
+    <header-home />
     <div id="scroll_wrapper" class="scroll-wrapper">
       <div class="content">
-        <open-app></open-app>
-        <mt-swipe :auto="4000" class="home-swipe">
-          <mt-swipe-item>
-            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
-          </mt-swipe-item>
-          <mt-swipe-item>
-            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
-          </mt-swipe-item>
-          <mt-swipe-item>
-            <img src="//gw.alicdn.com/imgextra/i3/89/TB20HSIewvD8KJjy0FlXXagBFXa_!!89-0-luban.jpg_q50.jpg" alt="">
+        <open-app />
+        <mt-swipe :auto="4000" class="home-swipe" v-for="">
+          <mt-swipe-item v-for="ads in adsList" :key="ads.id">
+            <img :src="ads.url" :alt="ads.name" />
           </mt-swipe-item>
         </mt-swipe>
       </div>
     </div>
-    <footer-tabbar></footer-tabbar>
+    <footer-tabbar />
   </div>
 </template>
 
@@ -28,7 +22,7 @@ import BScroll from 'better-scroll'
 import headerHome from '../../components/header/headerHome'
 import openApp from '../../components/common/openApp'
 import footerTabbar from '../../components/footer/footerTabbar'
-const userModule = createNamespacedHelpers('user')
+const homeModule = createNamespacedHelpers('home')
 export default {
   components: {
     mtSwipe: Swipe,
@@ -38,11 +32,8 @@ export default {
     footerTabbar
   },
   computed: {
-    ...userModule.mapState([
-      'userListState'
-    ]),
-    ...userModule.mapGetters([
-      'userListGetters'
+    ...homeModule.mapGetters([
+      'adsList'
     ])
   },
   mounted () {
@@ -56,12 +47,13 @@ export default {
     this.initData()
   },
   methods: {
-    ...userModule.mapActions([
-      'getUserList'
+    ...homeModule.mapActions([
+      'getAdsList'
     ]),
     // 初始化数据
     async initData () {
-      await this.getUserList()
+      await this.getAdsList()
+      console.log(this.adsList)
     }
   }
 }
