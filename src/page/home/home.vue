@@ -4,7 +4,7 @@
     <div id="scroll_wrapper" class="scroll-wrapper">
       <div class="content">
         <open-app />
-        <mt-swipe :auto="4000" class="home-swipe" v-for="">
+        <mt-swipe :auto="4000" class="home-swipe">
           <mt-swipe-item v-for="ads in adsList" :key="ads.id">
             <img :src="ads.url" :alt="ads.name" />
           </mt-swipe-item>
