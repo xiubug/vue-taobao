@@ -10,45 +10,9 @@
           </mt-swipe-item>
         </mt-swipe>
         <div class="home-menu">
-          <div class="menu-item">
-            <div class="item-img img1"></div>
-            <div class="item-title">天猫</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img2"></div>
-            <div class="item-title">聚划算</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img3"></div>
-            <div class="item-title">天猫国际</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img4"></div>
-            <div class="item-title">外卖</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img5"></div>
-            <div class="item-title">天猫超市</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img6"></div>
-            <div class="item-title">充值中心</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img7"></div>
-            <div class="item-title">飞猪旅行</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img8"></div>
-            <div class="item-title">领金币</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img9"></div>
-            <div class="item-title">拍卖</div>
-          </div>
-          <div class="menu-item">
-            <div class="item-img img10"></div>
-            <div class="item-title">分类</div>
+          <div class="menu-item" v-for="menu in menuList" :key="menu.type">
+            <div class="item-img" :style="{background: 'url('+ menu.url +') no-repeat center center', backgroundSize: 'cover'}"></div>
+            <div class="item-title">{{menu.name}}</div>
           </div>
         </div>
       </div>
@@ -75,7 +39,8 @@ export default {
   },
   computed: {
     ...homeModule.mapGetters([
-      'adsList'
+      'adsList',
+      'menuList'
     ])
   },
   mounted () {
@@ -90,12 +55,13 @@ export default {
   },
   methods: {
     ...homeModule.mapActions([
-      'getAdsList'
+      'getAdsList',
+      'getMenuList'
     ]),
     // 初始化数据
     async initData () {
       await this.getAdsList()
-      console.log(this.adsList)
+      await this.getMenuList()
     }
   }
 }
@@ -105,8 +71,11 @@ export default {
   .scroll-wrapper {
     position: relative;
     margin-top: .95rem;
+    background-color: #eee;
+    height: 100%;
     .home-swipe {
       height: 100px;
+      background-color: #fff;
       img {
         width: 100%;
         height: 100%;
@@ -116,7 +85,8 @@ export default {
     .home-menu {
       display: flex;
       flex-wrap: wrap;
-      padding: 0 .2rem;
+      padding: 0 .2rem .2rem .2rem;
+      background-color: #fff;
       .menu-item {
         width: 20%;
         text-align: center;
