@@ -42,7 +42,12 @@ router.beforeEach((to, from, next) => {
   if (to.meta.login && to.path !== Config.route.login && (!cookies || !cookies.token || (cookies && cookies.token && currentToken - cookies.token > 7200000))) {
     if (cookies && cookies.token) delete cookies.token
     Storage.set(Config.cookie, cookies)
-    next(Config.route.login)
+    next({
+      path: Config.route.login,
+      query: {
+        from: to.path
+      }
+    })
   } else {
     next()
   }
