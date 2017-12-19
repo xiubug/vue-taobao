@@ -4,7 +4,7 @@
 
 ## 注：此项目仿照淘宝网触屏版。
 
-> 基于 vue2 + vuex + webpack3 构建一个单页面应用
+> 基于 vue2 + vuex + webpack3 + mint-ui 构建一个单页面应用
 
 ## 特性
 
