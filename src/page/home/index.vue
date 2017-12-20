@@ -14,6 +14,12 @@
             <div class="item-img" :style="{background: 'url('+ menu.url +') no-repeat center center', backgroundSize: 'cover'}"></div>
             <div class="item-title">{{menu.name}}</div>
           </div>
+          <div class="home-headline" flex="">
+            <div flex-box="0" class="headline-img"></div>
+            <div flex-box="1" class="headline-content" flex="dir:left">
+              <span class="title">手机</span><span class="text">网友晒出自家猫照片，请问你家缺保姆吗</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -85,7 +91,7 @@ export default {
     .home-menu {
       display: flex;
       flex-wrap: wrap;
-      padding: 0 .2rem .2rem .2rem;
+      padding: 0 .2rem;
       background-color: #fff;
       .menu-item {
         width: 20%;
@@ -94,51 +100,45 @@ export default {
         .item-img {
           box-sizing: border-box;
           height: 1rem;
-          &.img1 {
-            background: url(http://sosout.com/static/images/tb/tm.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img2 {
-            background: url(http://sosout.com/static/images/tb/jhs.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img3 {
-            background: url(http://sosout.com/static/images/tb/tmgj.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img4 {
-            background: url(http://sosout.com/static/images/tb/wm.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img5 {
-            background: url(http://sosout.com/static/images/tb/tmcs.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img6 {
-            background: url(http://sosout.com/static/images/tb/czzx.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img7 {
-            background: url(http://sosout.com/static/images/tb/fzlx.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img8 {
-            background: url(http://sosout.com/static/images/tb/ljb.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img9 {
-            background: url(http://sosout.com/static/images/tb/pm.png) no-repeat center center;
-            background-size: cover;
-          }
-          &.img10 {
-            background: url(http://sosout.com/static/images/tb/fl.png) no-repeat center center;
-            background-size: cover;
-          }
         }
         .item-title {
           color: #666;
           font-size: .3rem;
           margin-top: .1rem;
+        }
+      }
+    }
+    .home-headline {
+      margin-top: .2rem;
+      padding: .1rem 0;
+      margin-left: -.2rem;
+      background-color: #fff;
+      overflow: hidden;
+      .headline-img {
+        width: 2.07rem;
+        height: .6rem;
+        background: url(http://sosout.com/static/images/tb/headline.png) no-repeat center center;
+        background-size: 80%;
+      }
+      .headline-content {
+        font-size: .36rem;
+        flex-wrap: nowrap;
+        .title {
+          display: inline-block;
+          white-space: nowrap;
+          border: 1px solid #D81421;
+          color: #D81421;
+          height: .4rem;
+          border-radius: .1rem;
+          font-size: .3rem;
+          padding: 0 .05rem;
+          margin: .1rem;
+        }
+        .text {
+          display: inline-block;
+          white-space: nowrap;
+          height: .6rem;
+          line-height: .6rem;
         }
       }
     }
