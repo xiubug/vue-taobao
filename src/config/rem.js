@@ -67,10 +67,10 @@
   function refreshRem () {
     var width = docEl.getBoundingClientRect().width
     // 适配平板
-    if (width / dpr > 750) {
-      width = 750 * dpr
+    var rem = 60
+    if (width / dpr <= 750) {
+      rem = 100 * (width / 750)
     }
-    var rem = 100 * (width / 750)
     docEl.style.fontSize = rem + 'px'
     flexible.rem = win.rem = rem
   }
